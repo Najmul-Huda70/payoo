@@ -36,7 +36,8 @@
     </style>
   </head>
   <body class="min-h-screen max-w-md bg-base-200 mx-auto">
-    <header class="border-b-2 border-gray-300">
+    <!-- header section -->
+    <header class="border-b-2 border-gray-300 sticky top-0 bg-base-200 z-10">
       <section class="w-11/12 py-3 mx-auto flex justify-between items-center">
         <div class="left flex gap-1">
           <div class="logo w-[60px]">
@@ -56,6 +57,7 @@
         </div>
       </section>
     </header>
+    <!-- welcome to payoo section -->
     <section class="w-11/12 py-10 mx-auto space-y-5">
       <h1 class="text-3xl font-bold">
         Welcome to Pay<span class="text-primary">oo</span>
@@ -65,11 +67,17 @@
         low and
       </p>
       <div class="bottuns grid grid-cols-3 gap-3">
-        <button class="btn btn-soft btn-primary flex-col h-full p-3">
+        <button
+          onclick="showOnly('Add-money')"
+          class="btn btn-soft btn-primary flex-col h-full p-3"
+        >
           <img src="./assets/opt-1.png" alt="" />
           <p>Add Money</p>
         </button>
-        <button class="btn btn-soft btn-primary flex-col h-full p-3">
+        <button
+          onclick="showOnly('cashout')"
+          class="btn btn-soft btn-primary flex-col h-full p-3"
+        >
           <img src="./assets/opt-2.png" alt="" />
           <p>Cashout</p>
         </button>
@@ -91,6 +99,66 @@
         </button>
       </div>
     </section>
+    <!-- add money section -->
+    <section id="Add-money" class="w-11/12 py-5 mx-auto space-y-5">
+      <h2 class="text-2xl font-bold">Add Money</h2>
+      <div class="card bg-base-100 w-full shadow rounded-2xl mx-auto">
+        <div class="card-body">
+          <fieldset class="fieldset space-y-3">
+            <label class="label text-xl text-neutral font-bold"
+              >Select A Bank</label
+            >
+            <select
+              name=""
+              id="select-bank"
+              class="select rounded-full bg-base-200 w-full"
+            >
+              <option disabled selected rounded-full>Select a back</option>
+              <option value="DBBL">DBBL</option>
+              <option value="IBBL">IBBL</option>
+              <option value="CITY">CITY Bank</option>
+            </select>
+            <label class="label text-xl text-neutral font-bold"
+              >Bank Account Number</label
+            >
+            <input
+              type="text"
+              id="bank-account-number"
+              class="input rounded-full bg-base-200 w-full"
+              maxlength="11"
+              minlength="11"
+              placeholder="Enter 11 digit account number"
+            /><label class="label text-xl text-neutral font-bold"
+              >Amount to Add</label
+            >
+            <input
+              type="number"
+              id="add-amuont-input"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Add Amount to withdraw"
+            />
+            <label class="label text-xl text-neutral font-bold"
+              >Pin Number</label
+            >
+            <input
+              type="password"
+              id="add-money-pin"
+              maxlength="4"
+              minlength="4"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter 4 digit pin number"
+            />
+            <button
+              id="add-money-btn"
+              class="btn btn-neutral mt-4 rounded-full bg-primary"
+            >
+              Add Money
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+    <!-- Cashout section -->
     <section id="cashout" class="w-11/12 py-5 mx-auto space-y-5">
       <h2 class="text-2xl font-bold">Cashout</h2>
       <div class="card bg-base-100 w-full shadow rounded-2xl mx-auto">
@@ -101,7 +169,7 @@
             >
             <input
               type="text"
-              id="cashout-number"
+              id="agent-number"
               class="input rounded-full bg-base-200 w-full"
               maxlength="11"
               minlength="11"
@@ -125,7 +193,7 @@
               placeholder="Enter 4 digit pin number"
             />
             <button
-              id="login-btn"
+              id="cashout-btn"
               class="btn btn-neutral mt-4 rounded-full bg-primary"
             >
               Withdraw Money
@@ -134,6 +202,15 @@
         </div>
       </div>
     </section>
+    <!-- Transaction History -->
+    <section id="cashout" class="w-11/12 py-5 mx-auto space-y-5">
+      <h2 class="text-2xl font-bold">Transaction History</h2>
+      <div class="" id="history-container">
+        <div class="Transaction-card p-5 bg-base-100"></div>
+      </div>
+    </section>
+    <script src="./script/machine.js"></script>
+    <script src="./script/addMoney.js"></script>
     <script src="./script/cashout.js"></script>
   </body>
 </html>
