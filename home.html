@@ -93,14 +93,17 @@
           <img src="./assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
-        <button class="btn btn-soft btn-primary flex-col h-full p-3">
+        <button
+          onclick="showOnly('transaction-history')"
+          class="btn btn-soft btn-primary flex-col h-full p-3"
+        >
           <img src="./assets/opt-6.png" alt="" />
           <p>Transactions</p>
         </button>
       </div>
     </section>
     <!-- add money section -->
-    <section id="Add-money" class="w-11/12 py-5 mx-auto space-y-5">
+    <section id="Add-money" class="w-11/12 py-5 mx-auto space-y-5 hidden">
       <h2 class="text-2xl font-bold">Add Money</h2>
       <div class="card bg-base-100 w-full shadow rounded-2xl mx-auto">
         <div class="card-body">
@@ -159,7 +162,7 @@
       </div>
     </section>
     <!-- Cashout section -->
-    <section id="cashout" class="w-11/12 py-5 mx-auto space-y-5">
+    <section id="cashout" class="w-11/12 py-5 mx-auto space-y-5 hidden">
       <h2 class="text-2xl font-bold">Cashout</h2>
       <div class="card bg-base-100 w-full shadow rounded-2xl mx-auto">
         <div class="card-body">
@@ -203,11 +206,12 @@
       </div>
     </section>
     <!-- Transaction History -->
-    <section id="cashout" class="w-11/12 py-5 mx-auto space-y-5">
+    <section
+      id="transaction-history"
+      class="w-11/12 py-5 mx-auto space-y-5 hidden"
+    >
       <h2 class="text-2xl font-bold">Transaction History</h2>
-      <div class="" id="history-container">
-        <div class="Transaction-card p-5 bg-base-100"></div>
-      </div>
+      <div class="space-y-3" id="history-container"></div>
     </section>
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
